@@ -1,4 +1,5 @@
 @extends('layout.default')
+@extends('layout.idx2')
 
 @section('content')
 <section>

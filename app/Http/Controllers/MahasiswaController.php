@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ApiFormatter;
 use Illuminate\Http\Request;
 use App\Models\M_mahasiswa;
 
@@ -15,10 +16,16 @@ class MahasiswaController extends Controller
     public function index()
     {
         $data = M_mahasiswa::all();
+        // if($data){
+        //     return ApiFormatter::createApi(200, 'Sucess', $data);
+        // }else{
+        //     return ApiFormatter::createApi(400, 'Failed');
+        // }
         return view('index')->with([
             'data' => $data
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
